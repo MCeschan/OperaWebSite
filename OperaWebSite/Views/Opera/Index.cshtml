@@ -1,0 +1,36 @@
+﻿
+@model IEnumerable<OperaWebSite.Models.Opera>
+<!--VA A RECIBIR UNA COLECCIÓN DE OPERAS-->
+@{
+    ViewData["Title"] = "Index Opera";
+}
+
+    @Html.ActionLink("Nuevo", "Create", "Opera")
+    <table>
+        <tr>
+            <th>@Html.DisplayNameFor(model=>model.Title)</th>
+            <th>@Html.DisplayNameFor(model=>model.Composer)</th>
+            <th>@Html.DisplayNameFor(model=>model.Year)</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+             <td>
+                    @Html.DisplayFor(modelItem=>item.Title)
+             </td>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.Composer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.Year)
+                </td>
+                <td>
+                                                      <!--esto es lo que recibe la action. id esta tal cual en la action-->
+                    @Html.ActionLink("Detalle", "Details", "Opera", new{id=item.OperaId})
+                    @Html.ActionLink("Eliminar", "Delete", "Opera", new{id=item.OperaId})
+                </td>
+
+            </tr>
+        }
+    </table>

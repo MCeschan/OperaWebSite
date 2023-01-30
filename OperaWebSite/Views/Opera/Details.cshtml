@@ -1,0 +1,21 @@
+﻿@model OperaWebSite.Models.Opera
+@{
+    ViewData["Title"] = "Details";
+}
+
+    <h2>Ver Detalle</h2>
+    @Html.ActionLink("Volver a Index", "Index", "Opera")
+  
+
+    <p>
+        @Html.DisplayNameFor(model=>model.Title)
+        @Html.DisplayFor(model=>model.Title)
+    </p>
+     <p>
+        @Html.DisplayNameFor(model=>model.Composer)
+        @Html.DisplayFor(model=>model.Composer)
+    </p>
+    <p>
+        @Html.DisplayNameFor(model=>model.Year)
+        @Html.DisplayFor(model=>model.Year)
+    </p>
